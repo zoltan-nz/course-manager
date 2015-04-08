@@ -93,7 +93,7 @@ void main() {
     return;
   }
 
-  int port = 9223;  // TODO use args from command line to set this
+  int port = Platform.environment['PORT'];  // TODO use args from command line to set this
 
   HttpServer.bind(InternetAddress.LOOPBACK_IP_V4, port).then((server) {
     log.info("Search server is running on "
