@@ -1,4 +1,4 @@
-name: basic_http_server
+name: s3_experiment
 description: A minimal static HTTP server to demonstrate Dart on Heroku.
 dependencies:
   browser: any
