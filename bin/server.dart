@@ -1,23 +1,27 @@
-import 'dart:io' show Platform;
-import 'dart:async' show runZoned;
-import 'package:path/path.dart' show join, dirname;
+import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart' as io;
-import 'package:shelf_static/shelf_static.dart';
+import 'package:shelf_route/shelf_route.dart';
+import 'package:shelf_rest/shelf_rest.dart';
+
+import 'package:micro_cms/controllers/admin_controller.dart';
+import 'package:micro_cms/controllers/home_controller.dart';
 
 void main() {
-  // Assumes the server lives in bin/ and that `pub build` ran
-  var pathToBuild = join(dirname(Platform.script.toFilePath()),
-  '..', 'build/web');
 
-  var handler = createStaticHandler(pathToBuild,
-  defaultDocument: 'index.html');
+  var rootRouter = router();
 
-  var portEnv = Platform.environment['PORT'];
-  var port = portEnv == null ? 9999 : int.parse(portEnv);
+  rootRouter
+    ..get('/', (_) {
+        HomeController controller = new HomeController;
+        return controller.index();
+      }
 
-  runZoned(() {
-    io.serve(handler, '0.0.0.0', port);
-    print("Serving $pathToBuild on port $port");
-  },
-  onError: (e, stackTrace) => print('Oh noes! $e $stackTrace'));
+  var adminRouter = rootRouter.child('/admin');
+
+  adminRouter
+    ..get('/', (_) => (new AdminController.index()));
+
+  io.serve(rootRouter.handler, 'localhost', 4000).then((server) {
+    print('Serving at http://${server.address.host}:${server.port}');
+  });
 }

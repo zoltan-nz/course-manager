@@ -1,7 +1,7 @@
-name: s3_experiment
-description: A minimal static HTTP server to demonstrate Dart on Heroku.
+name: micro_cms
+description: Edit Articles and List Articles
 dependencies:
   browser: any
   shelf: any
-  shelf_static: any
   shelf_route: any
+  shelf_rest: any
