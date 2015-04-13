@@ -2,6 +2,3 @@ name: micro_cms
 description: Edit Articles and List Articles
 dependencies:
   browser: any
-  shelf: any
-  shelf_route: any
-  shelf_rest: any
