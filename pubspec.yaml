@@ -1,4 +1,12 @@
-name: micro_cms
-description: Edit Articles and List Articles
+name: course-manager
+description:
 dependencies:
   browser: any
+  core_elements: any
+  polymer: any
+transformers:
+- polymer:
+    entry_points:
+    - web/index.html
+- $dart2js:
+    minify: true
