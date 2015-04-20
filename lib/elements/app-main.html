@@ -1,0 +1,24 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../packages/course_manager/elements/user-button.html">
+
+<polymer-element name="app-main">
+
+  <template>
+
+    <style>
+
+    </style>
+
+    <div>
+      <h1>Course Manager App</h1>
+
+      <template if="{{firstStep}}">
+        <h2>firstStep</h2>
+        <user-button type="professor"></user-button>
+        <user-button type="student"></user-button>
+      </template>
+
+    </div>
+  </template>
+  <script type="application/dart" src="app-main.dart"></script>
+</polymer-element>

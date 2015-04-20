@@ -1,9 +1,9 @@
-name: course-manager
+name: course_manager
 description:
 dependencies:
-  browser: any
-  core_elements: any
   polymer: any
+  core_elements: any
+  paper_elements: any
 transformers:
 - polymer:
     entry_points:
