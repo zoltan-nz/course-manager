@@ -6,7 +6,9 @@ const String LABEL = 'Professor';
 
 class Professor extends User {
 
-  Professor() : super();
+  String name;
+
+  Professor(this.name) : super();
 
   String get label => LABEL;
 }

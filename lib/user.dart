@@ -7,5 +7,4 @@ abstract class User {
   User();
 
   String get label;
-
 }

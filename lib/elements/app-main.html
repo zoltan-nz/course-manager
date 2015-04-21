@@ -9,13 +9,28 @@
 
     </style>
 
-    <div>
+    <div on-router="{{router}}">
       <h1>Course Manager App</h1>
 
       <template if="{{firstStep}}">
         <h2>firstStep</h2>
         <user-button type="professor"></user-button>
         <user-button type="student"></user-button>
+      </template>
+
+      <template if="{{secondStep}}">
+        <h2>secondStep</h2>
+
+        <template if="{{professorForm}}">
+          <h3>professorForm</h3>
+          <p>Name: {{user.name}}</p>
+        </template>
+
+        <template if="{{studentForm}}">
+          <h3>studentForm</h3>
+          <p>Name: {{user.name}}</p>
+        </template>
+
       </template>
 
     </div>
