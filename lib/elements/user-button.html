@@ -1,14 +1,13 @@
 <link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="../../../packages/paper_elements/paper_button.html">
 
-
 <polymer-element name="user-button">
   <template>
     <style>
-
     </style>
+
     <div>
-      <paper-button raised class="colored" on-click="{{secondStep}}">{{user.label}}</paper-button>
+      <paper-button raised on-click="{{secondStep}}">{{user.label}}</paper-button>
     </div>
   </template>
   <script type="application/dart" src="user-button.dart"></script>

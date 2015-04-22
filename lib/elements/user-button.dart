@@ -1,3 +1,5 @@
+library course_manager.elements.user_button;
+
 import 'package:polymer/polymer.dart';
 import 'package:course_manager/user.dart';
 import 'package:course_manager/professor.dart';

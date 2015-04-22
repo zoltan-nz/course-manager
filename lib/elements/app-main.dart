@@ -1,9 +1,12 @@
+library course_manager.elements.app_main;
+
 import 'package:polymer/polymer.dart';
 import 'dart:html';
 import 'package:course_manager/user.dart';
+import 'package:course_manager/professor.dart';
 
 @CustomTag('app-main')
-class App extends PolymerElement {
+class AppMain extends PolymerElement {
 
   @published User user;
 
@@ -12,8 +15,8 @@ class App extends PolymerElement {
   @observable bool professorForm = false;
   @observable bool studentForm = false;
 
-  App.created() : super.created() {
-    firstStep = true;
+  AppMain.created() : super.created() {
+    this.firstStep = true;
   }
 
   void router(Event e, var detail, Node sender) {
@@ -28,18 +31,9 @@ class App extends PolymerElement {
   void secondStepRoute(User selectedUser) {
     this.user = selectedUser;
 
-    firstStep = false;
-    secondStep = true;
+    this.firstStep = false;
+    this.secondStep = true;
 
-    print(user.runtimeType);
-
-    switch (user.runtimeType.toString()) {
-      case 'Professor':
-        professorForm = true;
-        break;
-      case 'Student':
-        studentForm = true;
-        break;
-    }
+    this.user is Professor ? this.professorForm = true : this.studentForm = true;
   }
 }

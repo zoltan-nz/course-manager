@@ -1,5 +1,5 @@
 name: course_manager
-description:
+description: Course Manager Prototype
 dependencies:
   polymer: any
   core_elements: any
