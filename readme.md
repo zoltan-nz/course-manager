@@ -2,9 +2,9 @@
 
 My Learning Dart Project. A simple prototype with 3 pages.
 
-Installation
+### Installation:
 
-1. Download Dart SDK
+1. Download and Install Dart SDK
 
     [www.dartlang.org](https://www.dartlang.org/)
 
